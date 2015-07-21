@@ -1,47 +1,39 @@
 # Site settings
-title: Freelancer
-email: your-email@domain.com
-url: https://example.github.io
-description: "Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description."
-skills: "Web Developer - Graphic Artist - User Experience Designer"
+title: WCC Signups
+email: evoris@wccstl.org
+url: http://www.wccstl.org
+description: "Sign up to get involved at Wildwood Christian Church. Join a small group today!"
+vision: "Connecting our distracted community into a life focused on Jesus."
 
 # Contact form: comment the line below if you want to stick with the default PHP contact form
 contact: static
 
 # Color settings (hex-codes without the leading hash-tag)
 color:
-  primary: 18bc9c #80B3FF
+  primary: 18bc9c #turquoise,about
   primary-rgb: "24,288,156" #"128,179,255"
-  secondary: 2c3e50 #FD6E8A
-  secondary-dark: 233140 #A2122F
+  secondary: 2c3e50 #footer-above,navbar
+  secondary-dark: 233140 #footer-below
 
 # Footer settings
 footer:
-  copyright: Dr. Henry Jekyll
+  copyright: Wildwood Christian Church
   location: Location
   social: Around the Web
-  credits: Credits
 
 # Social networks usernames (many more available: google-plus, flickr, dribbble, pinterest, instagram, tumblr, linkedin, etc.)
 social:
-  - title: twitter
-    url: http://twitter.com/jekyllrb
+  - title: envelope
+    url: mailto:office@wccstl.org
   - title: facebook
-    url:
-  - title: stack-overflow
-    url: http://stackoverflow.com/questions/tagged/jekyll
-  - title: bitbucket
-    url: http://bitbucket.org/jekyll
-  - title: github
-    url: http://github.com/jekyll
+    url: https://www.facebook.com/wccstl
+  - title: music
+    url: https://itunes.apple.com/us/podcast/wildwood-christian-church/id761424836
 
 # Postal address (add as many lines as necessary)
 address:
-  - line: 3481 Melrose Place
-  - line: Beverly Hills, CA 90210
-
-# Credits content
-credits: 'Freelancer is a free to use, open source Bootstrap theme created by <a href="http://startbootstrap.com">Start Bootstrap</a>.'
+  - line: 16717 Manchester Rd.
+  - line: Wildwood, MO 63040
 
 # Build settings
 markdown: kramdown

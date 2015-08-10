@@ -11,11 +11,25 @@
 
     <!-- Contact Form JavaScript -->
     <script src="{{ "/js/jqBootstrapValidation.js" }}"></script>
-    {% if site.contact == "static" %}
-    <script src="{{ "/js/contact_me_static.js" }}"></script>
+    {% if site.signup == "static" %}
+    <script src="{{ "/js/signup_static.js" }}"></script>
     {% else %}
-     <script src="{{ "/js/contact_me.js" }}"></script>
+     <script src="{{ "/js/signup.js" }}"></script>
     {% endif %}
 
     <!-- Custom Theme JavaScript -->
     <script src="{{ "/js/freelancer.js" }}"></script>
+
+    <!-- Some custom JavaScript for our form -->
+    <script>
+        $('#current-sg-yes').click(function() {
+            $('#current-sg-leader').removeAttr("disabled");
+            $('#current-sg-leader').attr("required",true);
+            $('#current-sg-leader').attr("data-validation-required-message","Please enter the name of your current small group leader.");
+        });
+        $('#current-sg-no').click(function() {
+            $('#current-sg-leader').removeAttr("required");
+            $('#current-sg-leader').removeAttr("data-validation-required-message");
+            $('#current-sg-leader').attr("disabled",true);
+        });
+    </script>

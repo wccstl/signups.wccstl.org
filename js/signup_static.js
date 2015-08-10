@@ -5,26 +5,55 @@ $(function() {
         submitError: function($form, event, errors) {
             // additional error messages or events
         },
-        submitSuccess: function($form, event) {
+                submitSuccess: function($form, event) {
             event.preventDefault(); // prevent default submit behaviour
             // get values from FORM
             var name = $("input#name").val();
-            var email = $("input#email").val();
+            var address = $("input#address").val();
+            var city = $("input#city").val();
+            var zip = $("input#zip").val();
             var phone = $("input#phone").val();
-            var message = $("textarea#message").val();
+            var email = $("input#email").val();
+            var unavailableCheckboxes = document.getElementsByName('unavailable-to-meet[]');
+            var unavailableVals = "";
+            for (var i=0, n=unavailableCheckboxes.length; i<n; i++) {
+                if (unavailableCheckboxes[i].checked) {
+                    unavailableVals += ","+unavailableCheckboxes[i].value;
+                }
+            }
+            if (unavailableVals) unavailable = unavailableVals.substring(1);
+            var children = $("input#number-children").val();
+            var childrenAges = $("input#ages-children").val();
+            var currentSG = $("input#current-sg").val();
+            var currentSGLeader = $("input#current-sg-leader").val();
+            var notes = $("textarea#notes").val();
+            var subject = $("input#_subject").val();
+            var gotcha = $("input#_gotcha").val();
             var firstName = name; // For Success/Failure Message
             // Check for white space in name for Success/Fail message
             if (firstName.indexOf(' ') >= 0) {
                 firstName = name.split(' ').slice(0, -1).join(' ');
             }
             $.ajax({
-                url: "././mail/contact_me.php",
+                url: "//formspree.io/evoris@wccstl.org",
                 type: "POST",
+                dataType: "json",
                 data: {
                     name: name,
+                    address: address,
+                    city: city,
+                    zip: zip,
                     phone: phone,
                     email: email,
-                    message: message
+                    unavailable: unavailable,
+                    children: children,
+                    childrenAges: childrenAges,
+                    currentSG: currentSG,
+                    currentSGLeader: currentSGLeader,
+                    notes: notes,
+                    _subject: subject,
+                    _gotcha: gotcha,
+                    _replyto: email
                 },
                 cache: false,
                 success: function() {
@@ -38,7 +67,8 @@ $(function() {
                         .append('</div>');
 
                     //clear all fields
-                    $('#contactForm').trigger("reset");
+                    $('#signUpForm').trigger("reset");
+                    $('div').removeClass("floating-label-form-group-with-value");
                 },
                 error: function() {
                     // Fail message
@@ -48,7 +78,8 @@ $(function() {
                     $('#success > .alert-danger').append("<strong>Sorry " + firstName + ", it seems that my mail server is not responding. Please try again later!");
                     $('#success > .alert-danger').append('</div>');
                     //clear all fields
-                    $('#contactForm').trigger("reset");
+                    $('#signUpForm').trigger("reset");
+                    $('div').removeClass("floating-label-form-group-with-value");
                 },
             })
         },
@@ -62,7 +93,6 @@ $(function() {
         $(this).tab("show");
     });
 });
-
 
 /*When clicking on Full hide fail/success boxes */
 $('#name').focus(function() {

@@ -1,19 +1,19 @@
 # Site settings
-title: WCC Signups
-email: evoris@wccstl.org
+title: Small Groups
+email: khamilton@wccstl.org
 url: ''
-description: "Sign up to get involved at Wildwood Christian Church. Join a small group today!"
+description: "Sign up to get focused with Wildwood Christian Church. Join a small group today!"
 vision: "Connecting our distracted community into a life focused on Jesus."
 
 # Contact form: comment the line below if you want to stick with the default PHP contact form
-contact: static
+signup: static
 
 # Color settings (hex-codes without the leading hash-tag)
 color:
-  primary: 18bc9c #turquoise,about
-  primary-rgb: "24,288,156" #"128,179,255"
-  secondary: 2c3e50 #footer-above,navbar
-  secondary-dark: 233140 #footer-below
+  primary: a7c422
+  primary-rgb: "167,196,34"
+  secondary: 383838
+  secondary-dark: 202020
 
 # Footer settings
 footer:

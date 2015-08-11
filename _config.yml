@@ -1,7 +1,8 @@
 # Site settings
 title: Small Groups
 email: khamilton@wccstl.org
-url: '/small-groups-signups'
+baseurl: '/small-groups-signups'
+url: 'https://wccstl.github.io'
 description: "Sign up to get focused with Wildwood Christian Church. Join a small group today!"
 vision: "Connecting our distracted community into a life focused on Jesus."
 

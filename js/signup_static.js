@@ -35,7 +35,7 @@ $(function() {
                 firstName = name.split(' ').slice(0, -1).join(' ');
             }
             $.ajax({
-                url: "//formspree.io/evoris@wccstl.org",
+                url: "https://formspree.io/khamilton@wccstl.org",
                 type: "POST",
                 dataType: "json",
                 data: {

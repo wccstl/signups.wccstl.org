@@ -24,11 +24,11 @@
     <script>
         $('#current-sg-yes').click(function() {
             $('#current-sg-leader').removeAttr("disabled");
-            $('#current-sg-leader').attr("required",true);
+            $('#current-sg-leader').prop("required",true);
             $('#current-sg-leader').attr("data-validation-required-message","Please enter the name of your current small group leader.");
         });
         $('#current-sg-no').click(function() {
-            $('#current-sg-leader').removeAttr("required");
+            $('#current-sg-leader').removeProp("required");
             $('#current-sg-leader').removeAttr("data-validation-required-message");
             $('#current-sg-leader').attr("disabled",true);
         });

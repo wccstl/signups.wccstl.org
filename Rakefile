@@ -17,7 +17,7 @@ end
 desc "Check the quality of the HTML output"
 task :proof do
   HTML::Proofer.new("./_site", { :verbose => true, :check_html => true,
-                                 :check_favicon => true, :check_external_hash => true }).run
+                                 :check_favicon => false, :check_external_hash => true }).run
 end
 
 desc "Default task is to clean and build"

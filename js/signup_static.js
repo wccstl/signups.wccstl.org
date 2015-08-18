@@ -14,6 +14,7 @@ $(function() {
             var zip = $("input#zip").val();
             var phone = $("input#phone").val();
             var email = $("input#email").val();
+            var unavailable = "";
             var unavailableCheckboxes = document.getElementsByName('unavailable-to-meet[]');
             var unavailableVals = "";
             for (var i=0, n=unavailableCheckboxes.length; i<n; i++) {

@@ -70,6 +70,13 @@ $(function() {
                     //clear all fields
                     $('#signUpForm').trigger("reset");
                     $('div').removeClass("floating-label-form-group-with-value");
+
+                    // Hide the success message
+                    $(function() {
+                        setTimeout(function() {
+                            $('#success').html("")
+                        }, 5000);
+                    });
                 },
                 error: function() {
                     // Fail message
@@ -78,9 +85,17 @@ $(function() {
                         .append("</button>");
                     $('#success > .alert-danger').append("<strong>Sorry " + firstName + ", it seems that my mail server is not responding. Please try again later!");
                     $('#success > .alert-danger').append('</div>');
+
                     //clear all fields
                     $('#signUpForm').trigger("reset");
                     $('div').removeClass("floating-label-form-group-with-value");
+
+                    // Hide the fail message
+                    $(function() {
+                        setTimeout(function() {
+                            $('#success').html("")
+                        }, 5000);
+                    });
                 },
             })
         },

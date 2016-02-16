@@ -14,6 +14,7 @@ $(function() {
             var zip = $("input#zip").val();
             var phone = $("input#phone").val();
             var email = $("input#email").val();
+            var unavailable = "";
             var unavailableCheckboxes = document.getElementsByName('unavailable-to-meet[]');
             var unavailableVals = "";
             for (var i=0, n=unavailableCheckboxes.length; i<n; i++) {
@@ -35,7 +36,7 @@ $(function() {
                 firstName = name.split(' ').slice(0, -1).join(' ');
             }
             $.ajax({
-                url: "//formspree.io/evoris@wccstl.org",
+                url: "https://formspree.io/khamilton@wccstl.org",
                 type: "POST",
                 dataType: "json",
                 data: {
@@ -62,13 +63,20 @@ $(function() {
                     $('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
                         .append("</button>");
                     $('#success > .alert-success')
-                        .append("<strong>Your message has been sent. </strong>");
+                        .append("<strong>Your message has been sent.</strong>");
                     $('#success > .alert-success')
                         .append('</div>');
 
                     //clear all fields
                     $('#signUpForm').trigger("reset");
                     $('div').removeClass("floating-label-form-group-with-value");
+
+                    // Hide the success message
+                    $(function() {
+                        setTimeout(function() {
+                            $('#success').html("")
+                        }, 5000);
+                    });
                 },
                 error: function() {
                     // Fail message
@@ -77,9 +85,17 @@ $(function() {
                         .append("</button>");
                     $('#success > .alert-danger').append("<strong>Sorry " + firstName + ", it seems that my mail server is not responding. Please try again later!");
                     $('#success > .alert-danger').append('</div>');
+
                     //clear all fields
                     $('#signUpForm').trigger("reset");
                     $('div').removeClass("floating-label-form-group-with-value");
+
+                    // Hide the fail message
+                    $(function() {
+                        setTimeout(function() {
+                            $('#success').html("")
+                        }, 5000);
+                    });
                 },
             })
         },

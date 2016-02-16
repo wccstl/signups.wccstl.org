@@ -18,8 +18,7 @@ desc "Check the quality of the HTML output"
 task :proof do
   HTML::Proofer.new("./_site", { :verbose => true, :check_html => true,
                                  :check_favicon => false, :check_external_hash => true,
-                                 :checks_to_ignore => ['ScriptCheck'],
-                                 :url_ignore => ['/small-groups-signups/style.css'] }).run
+                                 :url_ignore => [%r[^/small-groups-signups/.+]] }).run
 end
 
 desc "Default task is to clean and build"

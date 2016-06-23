@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-require 'html/proofer'
+require 'html-proofer'
 
 desc "clean"
 task :clean do
@@ -16,7 +16,7 @@ end
 
 desc "Check the quality of the HTML output"
 task :proof do
-  HTML::Proofer.new("./_site", { :verbose => true, :check_html => true,
+  HTMLProofer.check_directory("./_site", { :verbose => true, :check_html => true,
                                  :check_favicon => false, :check_external_hash => true,
                                  :url_ignore => [%r[^/small-groups-signups/.+]] }).run
 end

@@ -11,14 +11,17 @@ end
 
 desc "build the site"
 task :build do
-  sh "bundle exec jekyll build"
+  sh "bundle exec jekyll build --profile"
 end
 
 desc "Check the quality of the HTML output"
 task :proof do
-  HTMLProofer.check_directory("./_site", { :verbose => true, :check_html => true,
-                                 :check_favicon => false, :check_external_hash => true,
-                                 :url_ignore => [%r[^/small-groups-signups/.+]] }).run
+  options = { :verbose => true, :check_html => true,
+              :check_favicon => false, :check_external_hash => true,
+              :assume_extension => true, :check_opengraph => true,
+              :check_img_http => true, :enforce_https => true,
+              :external_only => true }
+  HTMLProofer.check_directory("./_site", options).run
 end
 
 desc "Default task is to clean and build"
